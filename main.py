@@ -1,4 +1,4 @@
-from analyzer import show_all_student,show_student_result
+from analyzer import show_all_student,show_student_result,show_sub_avg,search_user_result,show_toppers
 import pandas as pd
 import numpy as np
 import time
@@ -35,6 +35,7 @@ def validate_input(user_input, range_upto):
 
 if __name__ == "__main__":
     data = load_data()
+    marks_data = show_student_result(data)
 
     while True:
         print(OPTIONS)
@@ -43,15 +44,31 @@ if __name__ == "__main__":
             if validate_input(user_choice,10):
                 match user_choice:
                     case 1:
-                        show_all_student(data)
+                        # calling the function and printing the output
+                        print(show_all_student(data))
                     case 2:
-                        print('User selected option 2')
+                        # geting the student's name
+                        student_name = input("Enter the student name:- ")
+
+                        # calling function and save its output in variable
+                        result = search_user_result(marks_data,student_name)
+
+                        # Printing the result
+                        print(f'==== Result of {student_name}====')
+                        print(result)
                     case 3:
-                        show_student_result(data)
+                        # Showing all student total marks and percentage
+                        print(marks_data)
                     case 4:
-                        print('User selected option 4')
+                        # Showing subject wise average
+                        print("=====Average Marks of Each Subjects=====")
+                        print(show_sub_avg(data))
                     case 5:
-                        print('User selected option 5')
+                        # Showing first 3 toppers
+                        toppers = show_toppers(marks_data)
+                        print('==== Toppers =======')
+                        print(toppers)
+                        
                     case 6:
                         print('User selected option 6')
                     case 7:
