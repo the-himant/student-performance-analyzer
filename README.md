@@ -25,14 +25,13 @@ student data from a CSV file and provides useful academic statistics.
 ## 📁 Project Structure
 
 student-performance-analyzer/
-│
 ├── data/
 │   └── students.csv(Dummy Data)
-│
 ├── main.py
 ├── analyzer.py
 ├── requirements.txt
-├── README.md
+└── README.md
+
 
 
 ## ⚙️ Installation
@@ -67,6 +66,27 @@ The application provides a menu:
 8. Class Statistics
 9. Student Ranking
 10. Exit
+
+---
+
+## 🛠️ Features & Menu Options
+
+When the script runs, an interactive menu will display. Enter a number from **1 to 10** to run specific analytics:
+
+| Option | Feature | Description |
+| :--- | :--- | :--- |
+| **1** | Show All Students | Displays the complete student roster from the dataset. |
+| **2** | Search Student | Look up a specific student's record and marks by name. |
+| **3** | Total Marks & % | Displays calculated total scores and percentage values for everyone. |
+| **4** | Subject Averages | Calculates and shows the mean performance score for each subject. |
+| **5** | Class Toppers | Ranks and displays the top 3 scoring students in the system. |
+| **6** | Pass/Fail Statistics | Gives a statistical breakdown of pass/fail counts across the class. |
+| **7** | Subject High/Low | Extracts the maximum and minimum achieved scores for each subject. |
+| **8** | Class Statistics | Comprehensive aggregated summary overview of the classroom performance. |
+| **9** | Student Rankings | Generates a clean leaderboard dataframe sorted from highest to lowest. |
+| **10** | **Exit System** | Safely shuts down the execution framework. |
+
+---
 
 ## 🎯 Learning Objectives
 
