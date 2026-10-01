@@ -1,4 +1,4 @@
-from analyzer import show_all_student,show_student_result,show_sub_avg,search_user_result,show_toppers
+from analyzer import show_all_student,show_student_result,show_sub_avg,search_user_result,show_toppers,pass_fail_statistics,high_low_sub_score,class_stats,student_ranking
 import pandas as pd
 import numpy as np
 import time
@@ -70,13 +70,19 @@ if __name__ == "__main__":
                         print(toppers)
                         
                     case 6:
-                        print('User selected option 6')
+                        # Pass/Fail Statistics
+                        output = pass_fail_statistics(marks_data)
+                        print(output)
                     case 7:
-                        print('User selected option 7')
+                        output = high_low_sub_score(marks_data)
+                        print(output)
                     case 8:
-                        print('User selected option 8')
+                        output = class_stats(marks_data)
+                        print(output)
                     case 9:
-                        print('User selected option 9')
+                        ranking_result = student_ranking(marks_data)
+                        print('=== Ranking Result ===')
+                        print(ranking_result)
                     case 10:
                         print('Thanks for using our Application :) ')
                         break
@@ -85,7 +91,8 @@ if __name__ == "__main__":
             time.sleep(1)
         
             is_continue = input('Do you want to continue (Press any key to Continue or N for No):- ')
-            if is_continue.lower() == 'N':
+            if is_continue.lower() == 'n':
+                print('Thanks for using our Application :) ')
                 break
 
         except ValueError:
